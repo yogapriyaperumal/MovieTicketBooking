@@ -14,9 +14,10 @@ public class ApplicationDbContext : DbContext
     // Database tables
     public DbSet<Movie> Movies { get; set; }
 
-    //public DbSet<Theatre> Theatres { get; set; }
+    public DbSet<Theatre> Theatres { get; set; }
+    public DbSet<Screen> Screens { get; set; }
 
-    
+
     //public DbSet<Seat> Seats { get; set; }
 
     public DbSet<Show> Shows { get; set; }
@@ -75,7 +76,7 @@ public class ApplicationDbContext : DbContext
         // THEATRE CONFIGURATION
         // =====================================
 
-        /*modelBuilder.Entity<Theatre>(entity =>
+        modelBuilder.Entity<Theatre>(entity =>
         {
             entity.HasKey(t => t.TheatreId);
 
@@ -86,14 +87,13 @@ public class ApplicationDbContext : DbContext
             entity.Property(t => t.Location)
                 .HasMaxLength(200)
                 .IsRequired();
-        });*/
-
+        });
 
         // =====================================
         // SCREEN CONFIGURATION
         // =====================================
 
-        /*modelBuilder.Entity<Screen>(entity =>
+        modelBuilder.Entity<Screen>(entity =>
         {
             entity.HasKey(s => s.ScreenId);
 
@@ -101,24 +101,25 @@ public class ApplicationDbContext : DbContext
                 .HasMaxLength(50)
                 .IsRequired();
 
+            // Screen name must be unique within a theatre.
             entity.HasIndex(s => new
             {
                 s.TheatreId,
                 s.ScreenName
             }).IsUnique();
 
+            // Theatre → Screens relationship
             entity.HasOne(s => s.Theatre)
                 .WithMany(t => t.Screens)
                 .HasForeignKey(s => s.TheatreId)
                 .OnDelete(DeleteBehavior.Restrict);
         });
 
-
         // =====================================
         // SEAT CONFIGURATION
         // =====================================
 
-        modelBuilder.Entity<Seat>(entity =>
+        /*modelBuilder.Entity<Seat>(entity =>
         {
             entity.HasKey(s => s.SeatId);
 

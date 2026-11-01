@@ -1,4 +1,5 @@
 ﻿using MovieTicketBooking.Data;
+using Microsoft.EntityFrameworkCore;
 using MovieTicketBooking.Models;
 using MovieTicketBooking.Respositories.Interfaces;
 

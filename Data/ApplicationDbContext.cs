@@ -19,7 +19,7 @@ public class ApplicationDbContext : DbContext
     
     //public DbSet<Seat> Seats { get; set; }
 
-    //public DbSet<Show> Shows { get; set; }
+    public DbSet<Show> Shows { get; set; }
 
     //public DbSet<ShowSeat> ShowSeats { get; set; }
 
@@ -152,7 +152,7 @@ public class ApplicationDbContext : DbContext
                 .HasForeignKey(s => s.ScreenId)
                 .OnDelete(DeleteBehavior.Restrict);
         });
-
+        
 
         // =====================================
         // SHOW CONFIGURATION
@@ -194,7 +194,7 @@ public class ApplicationDbContext : DbContext
                 .OnDelete(DeleteBehavior.Restrict);
         });
 
-
+        
         // =====================================
         // SHOW SEAT CONFIGURATION
         // =====================================

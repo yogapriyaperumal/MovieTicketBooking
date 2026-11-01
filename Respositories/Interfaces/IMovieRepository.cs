@@ -2,7 +2,7 @@
 
 namespace MovieTicketBooking.Respositories.Interfaces
 {
-    public class IMovieRepository
+    public interface IMovieRepository
     {
         Task<List<Movie>> GetAllAsync(
         int pageNumber,

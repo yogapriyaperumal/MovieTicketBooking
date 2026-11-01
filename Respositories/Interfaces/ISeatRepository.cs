@@ -1,6 +1,6 @@
 ﻿using MovieTicketBooking.Models;
 
-namespace MovieTicketBooking.Repositories.Interfaces;
+namespace MovieTicketBooking.Respositories.Interfaces;
 
 public interface ISeatRepository
 {

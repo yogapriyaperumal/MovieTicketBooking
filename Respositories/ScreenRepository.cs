@@ -3,7 +3,7 @@ using MovieTicketBooking.Data;
 using MovieTicketBooking.Models;
 using MovieTicketBooking.Respositories.Interfaces;
 
-namespace MovieTicketBooking.Repositories;
+namespace MovieTicketBooking.Respositories;
 
 public class ScreenRepository : IScreenRepository
 {

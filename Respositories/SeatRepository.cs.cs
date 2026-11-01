@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MovieTicketBooking.Data;
 using MovieTicketBooking.Models;
-using MovieTicketBooking.Repositories.Interfaces;
+using MovieTicketBooking.Respositories.Interfaces;
 
-namespace MovieTicketBooking.Repositories;
+namespace MovieTicketBooking.Respositories;
 
 public class SeatRepository : ISeatRepository
 {

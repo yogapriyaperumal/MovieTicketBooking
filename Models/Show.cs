@@ -1,18 +1,27 @@
-﻿namespace MovieTicketBooking.Models
+﻿namespace MovieTicketBooking.Models;
+
+public class Show
 {
-    public class Show
-    {
-        public int ShowId { get; set; }
+    public int ShowId { get; set; }
 
-        public int MovieId { get; set; }
+    public int MovieId { get; set; }
 
-        public DateTime ShowDateTime { get; set; }
+    public int ScreenId { get; set; }
 
-        public decimal TicketPrice { get; set; }
+    public DateTime StartTime { get; set; }
 
-        public int TotalSeats { get; set; }
+    public DateTime EndTime { get; set; }
 
-        // Navigation property
-        public Movie Movie { get; set; } = null!;
-    }
+    public decimal TicketPrice { get; set; }
+
+    // Navigation properties
+    public Movie? Movie { get; set; }
+
+    public Screen? Screen { get; set; }
+
+    public ICollection<ShowSeat> ShowSeats { get; set; }
+        = new List<ShowSeat>();
+
+    public ICollection<Booking> Bookings { get; set; }
+        = new List<Booking>();
 }

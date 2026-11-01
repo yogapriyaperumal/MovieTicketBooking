@@ -1,6 +1,6 @@
 ﻿using MovieTicketBooking.DTOs.Seats;
 using MovieTicketBooking.Models;
-using MovieTicketBooking.Repositories.Interfaces;
+using MovieTicketBooking.Respositories.Interfaces;
 using MovieTicketBooking.Services.Interfaces;
 
 namespace MovieTicketBooking.Services;

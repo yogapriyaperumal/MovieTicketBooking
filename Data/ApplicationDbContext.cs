@@ -16,19 +16,14 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<Theatre> Theatres { get; set; }
     public DbSet<Screen> Screens { get; set; }
-
-
-    //public DbSet<Seat> Seats { get; set; }
-
     public DbSet<Show> Shows { get; set; }
 
     public DbSet<Seat> Seats { get; set; }
 
-    //public DbSet<ShowSeat> ShowSeats { get; set; }
+    public DbSet<ShowSeat> ShowSeats { get; set; }
 
-    //public DbSet<Booking> Bookings { get; set; }
-
-    //public DbSet<BookingSeat> BookingSeats { get; set; }
+    public DbSet<Booking> Bookings { get; set; }
+    public DbSet<BookingSeat> BookingSeats { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -161,7 +156,7 @@ public class ApplicationDbContext : DbContext
         // SHOW CONFIGURATION
         // =====================================
 
-        /*modelBuilder.Entity<Show>(entity =>
+        modelBuilder.Entity<Show>(entity =>
         {
             entity.HasKey(s => s.ShowId);
 
@@ -308,6 +303,6 @@ public class ApplicationDbContext : DbContext
                 .WithMany(s => s.BookingSeats)
                 .HasForeignKey(bs => bs.SeatId)
                 .OnDelete(DeleteBehavior.Restrict);
-        });*/
+        });
     }
 }

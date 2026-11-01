@@ -1,4 +1,5 @@
 using MovieTicketBooking.Repositories;
+using MovieTicketBooking.Repositories.Interfaces;
 using MovieTicketBooking.Respositories;
 using MovieTicketBooking.Respositories.Interfaces;
 using MovieTicketBooking.Services;
@@ -18,6 +19,8 @@ builder.Services.AddScoped<ITheatreRepository, TheatreRepository>();
 builder.Services.AddScoped<ITheatreService, TheatreService>();
 builder.Services.AddScoped<IScreenRepository, ScreenRepository>();
 builder.Services.AddScoped<IScreenService, ScreenService>();
+builder.Services.AddScoped<ISeatRepository, SeatRepository>();
+builder.Services.AddScoped<ISeatService, SeatService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

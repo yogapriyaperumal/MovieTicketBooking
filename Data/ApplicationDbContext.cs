@@ -22,6 +22,8 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<Show> Shows { get; set; }
 
+    public DbSet<Seat> Seats { get; set; }
+
     //public DbSet<ShowSeat> ShowSeats { get; set; }
 
     //public DbSet<Booking> Bookings { get; set; }
@@ -119,7 +121,7 @@ public class ApplicationDbContext : DbContext
         // SEAT CONFIGURATION
         // =====================================
 
-        /*modelBuilder.Entity<Seat>(entity =>
+        modelBuilder.Entity<Seat>(entity =>
         {
             entity.HasKey(s => s.SeatId);
 
@@ -159,7 +161,7 @@ public class ApplicationDbContext : DbContext
         // SHOW CONFIGURATION
         // =====================================
 
-        modelBuilder.Entity<Show>(entity =>
+        /*modelBuilder.Entity<Show>(entity =>
         {
             entity.HasKey(s => s.ShowId);
 

@@ -1,5 +1,8 @@
-using MovieTicketBooking.Respositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using MovieTicketBooking.Data;
+using MovieTicketBooking.Middleware;
 using MovieTicketBooking.Respositories;
+using MovieTicketBooking.Respositories.Interfaces;
 using MovieTicketBooking.Services;
 using MovieTicketBooking.Services.Interfaces;
 
@@ -25,7 +28,12 @@ builder.Services.AddScoped<IShowSeatRepository, ShowSeatRepository>();
 builder.Services.AddScoped<IShowSeatService, ShowSeatService>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IBookingService, BookingService>();
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")));
 var app = builder.Build();
+app.UseMiddleware<GlobalExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

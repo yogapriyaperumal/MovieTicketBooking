@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MovieTicketBooking.DTO.Movies;
 using MovieTicketBooking.Services;
 using MovieTicketBooking.Services.Interfaces;
@@ -17,6 +18,7 @@ public class MoviesController : ControllerBase
     }
 
     // GET: api/movies
+    [Authorize(Policy = "AdminOrCustomer")]
     [HttpGet]
     public async Task<IActionResult> GetAll(
         [FromQuery] int pageNumber = 1,
@@ -80,6 +82,7 @@ public class MoviesController : ControllerBase
     }
 
     // POST: api/movies
+    [Authorize(Policy = "AdminOnly")]
     [HttpPost]
     public async Task<IActionResult> Create(
         [FromBody] CreateMovieRequest request)

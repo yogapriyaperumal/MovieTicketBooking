@@ -1,6 +1,8 @@
 
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using MovieTicketBooking.Data;
 using MovieTicketBooking.Data.Seeders;
 using MovieTicketBooking.Middleware;
@@ -9,8 +11,6 @@ using MovieTicketBooking.Respositories;
 using MovieTicketBooking.Respositories.Interfaces;
 using MovieTicketBooking.Services;
 using MovieTicketBooking.Services.Interfaces;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
 
@@ -25,7 +25,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// ASP.NET Core Identity configuration
+// ASP.NET Core Identity
 builder.Services
     .AddIdentityCore<ApplicationUser>(options =>
     {
@@ -41,38 +41,7 @@ builder.Services
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddSignInManager();
 
-// Movie module dependency injection
-builder.Services.AddScoped<IMovieRepository, MovieRepository>();
-builder.Services.AddScoped<IMovieService, MovieService>();
-
-// Theatre module dependency injection
-builder.Services.AddScoped<ITheatreRepository, TheatreRepository>();
-builder.Services.AddScoped<ITheatreService, TheatreService>();
-
-// Screen module dependency injection
-builder.Services.AddScoped<IScreenRepository, ScreenRepository>();
-builder.Services.AddScoped<IScreenService, ScreenService>();
-
-// Seat module dependency injection
-builder.Services.AddScoped<ISeatRepository, SeatRepository>();
-builder.Services.AddScoped<ISeatService, SeatService>();
-
-// Show module dependency injection
-builder.Services.AddScoped<IShowRepository, ShowRepository>();
-builder.Services.AddScoped<IShowService, ShowService>();
-
-// ShowSeat module dependency injection
-builder.Services.AddScoped<IShowSeatRepository, ShowSeatRepository>();
-builder.Services.AddScoped<IShowSeatService, ShowSeatService>();
-
-// Booking module dependency injection
-builder.Services.AddScoped<IBookingRepository, BookingRepository>();
-builder.Services.AddScoped<IBookingService, BookingService>();
-
-builder.Services.AddScoped<IAuthService, AuthService>();
-
-var app = builder.Build();
-// JWT Authentication Configuration
+// JWT settings
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 
 var jwtKey = jwtSettings["Key"]
@@ -109,7 +78,54 @@ builder.Services
         };
     });
 
-// Seed Admin and Customer roles
+// Authorization policies
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy =>
+        policy.RequireRole("Admin"));
+
+    options.AddPolicy("CustomerOnly", policy =>
+        policy.RequireRole("Customer"));
+
+    options.AddPolicy("AdminOrCustomer", policy =>
+        policy.RequireRole("Admin", "Customer"));
+});
+
+// Movie module
+builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddScoped<IMovieService, MovieService>();
+
+// Theatre module
+builder.Services.AddScoped<ITheatreRepository, TheatreRepository>();
+builder.Services.AddScoped<ITheatreService, TheatreService>();
+
+// Screen module
+builder.Services.AddScoped<IScreenRepository, ScreenRepository>();
+builder.Services.AddScoped<IScreenService, ScreenService>();
+
+// Seat module
+builder.Services.AddScoped<ISeatRepository, SeatRepository>();
+builder.Services.AddScoped<ISeatService, SeatService>();
+
+// Show module
+builder.Services.AddScoped<IShowRepository, ShowRepository>();
+builder.Services.AddScoped<IShowService, ShowService>();
+
+// ShowSeat module
+builder.Services.AddScoped<IShowSeatRepository, ShowSeatRepository>();
+builder.Services.AddScoped<IShowSeatService, ShowSeatService>();
+
+// Booking module
+builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+builder.Services.AddScoped<IBookingService, BookingService>();
+
+// Authentication service
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+// Build application
+var app = builder.Build();
+
+// Seed roles
 using (var scope = app.Services.CreateScope())
 {
     await RoleSeeder.SeedRolesAsync(scope.ServiceProvider);

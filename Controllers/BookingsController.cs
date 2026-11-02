@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MovieTicketBooking.DTOs.Bookings;
 using MovieTicketBooking.Services.Interfaces;
 
 namespace MovieTicketBooking.Controllers;
 
+[Authorize(Policy = "AdminOnly")]
 [ApiController]
 [Route("api/[controller]")]
 public class BookingsController : ControllerBase

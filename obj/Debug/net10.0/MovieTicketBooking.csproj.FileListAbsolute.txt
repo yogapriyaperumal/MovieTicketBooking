@@ -9,6 +9,7 @@ C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Deb
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Azure.Core.dll
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Azure.Identity.dll
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Humanizer.dll
+C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Microsoft.Build.Framework.dll
@@ -148,6 +149,7 @@ C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\obj\Deb
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\obj\Debug\net10.0\MovieTicketBooking.csproj.CoreCompileInputs.cache
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\obj\Debug\net10.0\MovieTicketBooking.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\obj\Debug\net10.0\MovieTicketBooking.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\obj\Debug\net10.0\MovieTicketBooking.sourcelink.json
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
@@ -163,4 +165,3 @@ C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\obj\Deb
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\obj\Debug\net10.0\MovieTicketBooking.pdb
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\obj\Debug\net10.0\MovieTicketBooking.genruntimeconfig.cache
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\obj\Debug\net10.0\ref\MovieTicketBooking.dll
-C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\obj\Debug\net10.0\MovieTicketBooking.sourcelink.json

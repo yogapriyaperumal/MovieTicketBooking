@@ -4,5 +4,5 @@ namespace MovieTicketBooking.Models;
 
 public class ApplicationUser : IdentityUser
 {
-    // Additional user properties can be added later.
+    public string FullName { get; set; } = string.Empty;
 }

@@ -9,9 +9,11 @@ C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Deb
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Azure.Core.dll
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Azure.Identity.dll
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Humanizer.dll
+C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Microsoft.Build.Framework.dll
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
 C:\Users\DELL\OneDrive\Desktop\HCL\MovieTicketBooking\MovieTicketBooking\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll

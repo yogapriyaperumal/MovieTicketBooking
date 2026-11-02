@@ -1,6 +1,8 @@
-﻿namespace MovieTicketBooking.Models
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace MovieTicketBooking.Models;
+
+public class ApplicationUser : IdentityUser
 {
-    public class ApplicationUser
-    {
-    }
+    // Additional user properties can be added later.
 }

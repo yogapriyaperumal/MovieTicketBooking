@@ -82,6 +82,7 @@ public class MoviesController : ControllerBase
     }
 
     // POST: api/movies
+    [Authorize(Policy = "ManageMovies")]
     [Authorize(Policy = "AdminOnly")]
     [HttpPost]
     public async Task<IActionResult> Create(

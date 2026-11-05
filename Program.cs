@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+using MovieTicketBooking.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -88,7 +90,17 @@ builder.Services.AddAuthorization(options =>
 
     options.AddPolicy("AdminOrCustomer", policy =>
         policy.RequireRole("Admin", "Customer"));
+
+    // Custom authorization policy
+    options.AddPolicy("ManageMovies", policy =>
+        policy.Requirements.Add(
+            new PermissionRequirement("ManageMovies")));
 });
+
+// Register custom authorization handler
+builder.Services.AddSingleton<
+    IAuthorizationHandler,
+    PermissionAuthorizationHandler>();
 
 // CORS configuration
 builder.Services.AddCors(options =>
@@ -156,8 +168,22 @@ app.UseHttpsRedirection();
 // Enable CORS
 app.UseCors("AllowAngular");
 
+// Endpoint routing
+app.UseRouting();
+
+// Endpoint metadata diagnostics
+app.UseMiddleware<EndpointMetadataMiddleware>();
+
+// Authentication and Authorization
 app.UseAuthentication();
+
+// Authentication diagnostics
+app.UseMiddleware<AuthenticationDiagnosticsMiddleware>();
+
 app.UseAuthorization();
+
+// Authorization diagnostics
+app.UseMiddleware<AuthorizationDiagnosticsMiddleware>();
 
 app.MapControllers();
 
